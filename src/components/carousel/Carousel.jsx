@@ -15,7 +15,7 @@ import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 
 
-function Carousel({ data, loading, endpoint }) {
+function Carousel({ data, loading, endpoint, title }) {
 
     const carouselContainer = useRef(null)  // useRef is used to get the reference of the DOM element
     const {url} = useSelector(state => state.home)
@@ -46,6 +46,8 @@ function Carousel({ data, loading, endpoint }) {
     return (
         <div className="carousel">
             <ContentWrapper>
+
+                {title && <div className="carouselTitle">{title}</div>}
 
                 <BsFillArrowLeftCircleFill
                     className="carouselLeftNav arrow"
