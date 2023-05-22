@@ -11,9 +11,9 @@ const options = {
 };
 
 
-export const fetchDataFromApi = async (url) => {
+export const fetchDataFromApi = async (url, params) => {
     try{
-        const data = fetch(BASE_URL+url, options)
+        const data = fetch(BASE_URL+url, {...options, ...params})
             .then(response => response.json())
         return data;
     }
